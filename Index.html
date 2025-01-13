@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quick JCC Form</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="form-header">
+        <table class="header-table">
+          <tr>
+            <td class="logo-cell">
+              <img src="OIP.jpg" alt="Company Logo" class="logo" />
+            </td>
+            <td class="title-cell">
+              <h1>Quick JCC</h1>
+              <h2>Mechanical Maintenance (TSK)</h2>
+            </td>
+          </tr>
+        </table>
+      </header>
+
+      <div class="form-number">
+        <div class="label-container">
+          <strong>Form No.: DOC/ATS/Q-JCC/MM (TSK)</strong>
+        </div>
+        <div class="input-container">
+          <input
+            type="text"
+            id="form-number"
+            placeholder="Enter Form No."
+            required
+          />
+        </div>
+      </div>
+
+      <section class="general-details">
+        <div class="left-section">
+          <div class="row">
+            <label for="date">Date:</label>
+            <input type="date" id="date" required />
+          </div>
+          <div class="row">
+            <label for="area">Area:</label>
+            <input type="text" id="area" placeholder="Enter Area" required />
+          </div>
+          <div class="row">
+            <label for="department">Department:</label>
+            <input
+              type="text"
+              id="department"
+              placeholder="Enter Department"
+              required
+            />
+          </div>
+        </div>
+
+        <div class="vertical-line"></div>
+        <div class="right-section">
+          <div class="row">
+            <label for="work-permit">Work Permit:</label>
+            <input
+              type="text"
+              id="work-permit"
+              placeholder="Enter Work Permit Number"
+              required
+            />
+          </div>
+          <div class="row">
+            <label for="job-start-time">Job Start Time:</label>
+            <input type="time" id="job-start-time" required />
+          </div>
+          <div class="row">
+            <label for="job-end-time">Job End Time:</label>
+            <input type="time" id="job-end-time" required />
+          </div>
+        </div>
+      </section>
+
+      <section class="check-points">
+        <table>
+          <thead>
+            <tr>
+              <th>Sl. No.</th>
+              <th>Check Points</th>
+              <th>Applicability</th>
+              <th>Status (Tick)</th>
+              <th>Remarks</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>
+                SOP for particulars Job / Inspection available and adequate
+              </td>
+              <td>For all Jobs</td>
+              <td><input type="checkbox" required /></td>
+              <td><input type="text" placeholder="Remarks" required /></td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>
+                Six directional Hazard & Job-related hazards identified in Work
+                Permit
+              </td>
+              <td>For all Jobs</td>
+              <td><input type="checkbox" required /></td>
+              <td><input type="text" placeholder="Remarks" required /></td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>ESI for all Hazards mitigation taken before job start up</td>
+              <td>For all Jobs</td>
+              <td><input type="checkbox" required /></td>
+              <td><input type="text" placeholder="Remarks" required /></td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>
+                Toolbox talk conducted before job start up. SOP steps, isolation
+                method, Hazards & Precaution are discussed in toolbox talk.
+              </td>
+              <td>Job Requiring Isolation</td>
+              <td><input type="checkbox" required /></td>
+              <td><input type="text" placeholder="Remarks" required /></td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td>
+                Positive isolation of all energy sources done as per documents &
+                locked by different agency
+              </td>
+              <td>Job Requiring Energy Isolation</td>
+              <td><input type="checkbox" required /></td>
+              <td><input type="text" placeholder="Remarks" required /></td>
+            </tr>
+            <tr>
+              <td>6</td>
+              <td>
+                Job site Hazard Checklist is filled by vendor supervisors &
+                Safety Supervisors as per applicability
+              </td>
+              <td>For all Jobs</td>
+              <td><input type="checkbox" required /></td>
+              <td><input type="text" placeholder="Remarks" required /></td>
+            </tr>
+            <tr>
+              <td>7</td>
+              <td>
+                People engaged in job are well trained, skilled, certified, and
+                right for the job
+              </td>
+              <td>Check - Gate Pass, Height Pass, etc.</td>
+              <td><input type="checkbox" required /></td>
+              <td><input type="text" placeholder="Remarks" required /></td>
+            </tr>
+            <tr>
+              <td>8</td>
+              <td>
+                Safe means of approach, working platform provided for height
+                jobs & adequate anchoring of safety belt ensured
+              </td>
+              <td>W@H Job</td>
+              <td><input type="checkbox" required /></td>
+              <td><input type="text" placeholder="Remarks" required /></td>
+            </tr>
+            <tr>
+              <td>9</td>
+              <td>
+                Hot work / Gas permit taken while working in gas hazardous area
+                & all precautions taken
+              </td>
+              <td>Jobs in Gas Area</td>
+              <td><input type="checkbox" required /></td>
+              <td><input type="text" placeholder="Remarks" required /></td>
+            </tr>
+            <tr>
+              <td>10</td>
+              <td>
+                Confined space permit taken from competent person before working
+                in confined space
+              </td>
+              <td>Job in Confined Space</td>
+              <td><input type="checkbox" required /></td>
+              <td><input type="text" placeholder="Remarks" required /></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="signatures">
+        <div class="signature-field">
+          <label for="mi-signature">Sign of MI with P.No:</label>
+          <input
+            type="text"
+            id="mi-signature"
+            placeholder="Enter MI Signature"
+            required
+          />
+        </div>
+        <div class="signature-field">
+          <label for="ats-signature">Sign of ATS with SP No.:</label>
+          <input
+            type="text"
+            id="ats-signature"
+            placeholder="Enter ATS Signature"
+            required
+          />
+        </div>
+      </section>
+
+      <section class="instructions">
+        <h2>Important Instructions</h2>
+        <ol>
+          <li>
+            This document must be filled in addition to all other documents
+            currently in practice.
+          </li>
+          <li>
+            This form should be filled up at the site before starting the job.
+          </li>
+          <li>All check points shall be filled and certified.</li>
+          <li>
+            MI shall be present at the site for the entire duration of the job.
+          </li>
+          <li>
+            MI/Officer shall check the compliance of Job Site Hazard Checklist.
+          </li>
+          <li>
+            Maintenance activities undertaken in shifts shall also be covered
+            under Quick JCC.
+          </li>
+        </ol>
+      </section>
+
+      <section class="form-actions">
+        <button id="submit-button" type="button">Submit</button>
+      </section>
+    </div>
+    <div class="overlay" id="overlay"></div>
+    <div class="modal" id="success-modal">
+      <h2>Form Submitted Successfully!</h2>
+      <p>
+        Thank you for filling out the form. We will get back to you shortly.
+      </p>
+    </div>
+
+    <!-- New Modal Structure -->
+    <div id="success-modal-2" class="modal">
+      <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <p>Form submitted successfully!</p>
+      </div>
+    </div>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>
