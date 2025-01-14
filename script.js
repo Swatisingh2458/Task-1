@@ -6,9 +6,50 @@ document
     const fields = document.querySelectorAll("input[required]");
     let isValid = true;
 
+    document.querySelectorAll(".status-section").forEach((section) => {
+      section.classList.remove("highlight-error");
+      const errorMessage = section.querySelector(".status-error-message");
+      if (errorMessage) {
+        errorMessage.remove();
+      }
+    });
+
     fields.forEach((field) => {
       const errorMessage = field.nextElementSibling;
-      if (!field.value.trim()) {
+
+      if (field.name.startsWith("status")) {
+        const row = field.closest("tr");
+        const statusSection = row.querySelector("td:nth-child(4)");
+
+        if (!document.querySelector(`input[name="${field.name}"]:checked`)) {
+          // Highlight the status column of this specific row
+          if (statusSection) {
+            statusSection.classList.add("highlight-error");
+          }
+
+          if (!statusSection.querySelector(".status-error-message")) {
+            const statusErrorMessage = document.createElement("span");
+            statusErrorMessage.classList.add(
+              "error-message",
+              "status-error-message"
+            );
+            statusErrorMessage.textContent = "Please select a status";
+            statusSection.appendChild(statusErrorMessage);
+          }
+
+          isValid = false;
+        } else {
+          if (statusSection) {
+            statusSection.classList.remove("highlight-error");
+            const statusErrorMessage = statusSection.querySelector(
+              ".status-error-message"
+            );
+            if (statusErrorMessage) {
+              statusErrorMessage.remove();
+            }
+          }
+        }
+      } else if (!field.value.trim() && !field.checked) {
         field.classList.add("error");
 
         if (
@@ -35,7 +76,7 @@ document
       alert("Please fill in all required fields!");
 
       fields.forEach((field) => {
-        if (!field.value.trim()) {
+        if (!field.value.trim() && !field.checked) {
           field.focus();
           return;
         }
@@ -48,7 +89,6 @@ document
     const closeButton = modal.querySelector(".close-button");
 
     formContainer.style.display = "none";
-
     modal.classList.add("active");
 
     closeButton.addEventListener("click", function () {
